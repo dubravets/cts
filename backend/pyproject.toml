@@ -9,6 +9,7 @@ description = "Backend service for cluster test management"
 requires-python = ">=3.12"
 dependencies = [
   "fastapi>=0.116.0",
+  "openpyxl>=3.1.0",
   "uvicorn[standard]>=0.35.0",
   "pydantic>=2.11.0",
   "python-multipart>=0.0.9",
