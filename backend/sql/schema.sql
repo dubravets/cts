@@ -28,6 +28,9 @@ CREATE TABLE IF NOT EXISTS "references" (
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX IF NOT EXISTS idx_references_doc_id
+ON "references"(doc_id);
+
 CREATE TABLE IF NOT EXISTS requirements (
     id TEXT PRIMARY KEY,
     statement TEXT NOT NULL,
