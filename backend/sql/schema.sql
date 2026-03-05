@@ -1,9 +1,16 @@
 CREATE TABLE IF NOT EXISTS documents (
     id TEXT PRIMARY KEY,
+    doc_key TEXT NOT NULL,
     version TEXT NOT NULL,
     filename TEXT NOT NULL,
+    content_type TEXT NOT NULL,
+    size_bytes INTEGER NOT NULL,
+    storage_path TEXT NOT NULL,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_documents_doc_key_version
+ON documents(doc_key, version);
 
 CREATE TABLE IF NOT EXISTS project_config (
     id INTEGER PRIMARY KEY CHECK (id = 1),
